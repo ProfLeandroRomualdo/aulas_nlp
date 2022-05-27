@@ -102,4 +102,4 @@ def prediction_classifier(docs_new):
     twenty_train = fetch_20newsgroups(subset='train',categories=categories, shuffle=True, random_state=42)
 
     for doc, category in zip(docs_new, sgd_predicted):
-        return 'O texto a seguir..: {}, foi classificado como {}. '.format(doc, twenty_train.target_names[category])  
+        return twenty_train.target_names[category] 

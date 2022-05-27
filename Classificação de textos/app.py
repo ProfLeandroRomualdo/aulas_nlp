@@ -13,6 +13,9 @@ import streamlit as st
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.datasets import fetch_20newsgroups
 import streamlit as st
+import spacy 
+
+nlp = spacy.load('en_core_web_sm')
 
 try:
     from functions import *
@@ -64,7 +67,9 @@ try:
             # e armazene-o no resultado variável
             if st.button("Predict"):
                 result = prediction_classifier(text)
-            st.success('O texto inserido foi classificado como:\n {}'.format(result))
+            st.success('O texto inserido foi classificado como {}:\n e com as seguintes entidades nomeadas : {}, {}'.format(result, nlp(text).ents[0].text, nlp(text).ents[0].label_,nlp(text).ents[1].text, nlp(text).ents[1].label_))
+
+            
 
         if options == 'Geração de textos':
 

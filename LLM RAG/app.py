@@ -14,7 +14,7 @@ from sklearn.datasets import fetch_20newsgroups
 import streamlit as st
 import spacy 
 
-nlp = spacy.load('en_core_web_sm')
+
 
 try:
     from functions import *
@@ -36,11 +36,7 @@ try:
 
     # aqui definimos alguns dos elementos do front end da página da web, como
     # a fonte e a cor de fundo, o preenchimento e o texto a ser exibido
-    html_temp = """
-    <div style ="background-color:blue;padding:13px">
-    <h1 style ="color:white;text-align:center;">Aplicação de NLP - Turma 35 Inteligencia artificial Uninove </h1>
-    </div>
-    """
+
 
     # esta linha nos permite exibir os aspectos do front end que temos
     # definido no código acima
